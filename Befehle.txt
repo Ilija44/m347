@@ -1,0 +1,49 @@
+
+B)
+1. Docker version überprüfen
+	- docker --version
+2. Docker search Befehle
+	- docker search ubuntu
+	- docker search nginx
+3. Parameter Erklären
+	- -d (startet den container im Hintergrund)
+	- -p 80:80 (Mappt Port 80 des Hosts auf Port 80 des Containers)
+	- docker/getting-started (Das verwendete Image)
+4. Nginx Image 
+	- docker pull nginx
+	- docker create -p 8081:80 --name mynginx nginx
+	- docker start mynginx
+	- http://localhost:8081
+5. Ubuntu Image
+	- docker run -d ubuntu
+Docker versuchr das Image zu finden. Wenn das Image nicht gefunden wird versucht der Docker das Image automatisch aus dem Docker Hub herunterzuladen. Der Docker wird im Hintergrund ausgeführt. Mit dem Befehl "Docker ps" kann ich jetzt schauen ob der docker gestartet ist.
+	- docker run -it ubuntu
+Mit dem "-it" Befehl öffnet man direkt das interactive terminal. Das interactive terminal ist in der shell im COntainer.
+6. Nachträglich interactive shell starten
+	- docker exec -it mynginx /bin/bash
+	- service nginx status
+7. status der docker
+	- ps -a
+8. NGINX stoppen
+	- docker stop mynginx
+9. Docker löschen
+	- docker rm $(docker ps -a -q)
+	- docker rm 52f9657622fd
+	- docker rm 56b2c517838e
+	- docker rm bfaca5de066f
+10. Images Entfernen
+	- docker rmi nginx ubuntu
+
+D)
+1. Nginx Herunterladen
+	- docker pull nginx:latest
+2. Nginx in das eigene repo kopieren
+	- docker tag nginx:latest ilija44/m347:nginx
+3. MariaDb herunterladen
+	- docker pull mariadb:latest
+4. MariaDb in das eigene repo kopieren
+	- docker tag mariadb:latest ilija44/m347:mariadb
+5. Alles auf repo pushen
+	- docker push ilija44/m347:nginx
+	- docker push ilija44/m347:mariadb
+ 
