@@ -16,9 +16,9 @@ B)
 	- http://localhost:8081
 5. Ubuntu Image
 	- docker run -d ubuntu
-Docker sucht das Image. Wenn das Image nicht gefunden wird, versucht der Docker das Image automatisch aus dem Docker Hub herunterzuladen. Der Docker wird dann im Hintergrund ausgeführt. Mit dem Befehl "Docker ps" kann man schauen ob der docker gestartet ist.
+Docker sucht das Image. Wenn das Image nicht gefunden wird, wird er auch nicht gestartet. Der Docker wird dann nicht ausgeführt. Mit dem Befehl "Docker ps" kann man den Status vom docker anschauen.
 	- docker run -it ubuntu
-Mit dem "-it" Befehl öffnet man direkt das interactive terminal. Das interactive terminal ist in der shell im Cntainer.
+Mit dem "-it" Befehl öffnet man direkt das interactive terminal. Das interactive terminal ist in der shell im Container.
 6. Nachträglich interactive shell starten
 	- docker exec -it mynginx /bin/bash
 	- service nginx status
