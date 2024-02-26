@@ -1,0 +1,11 @@
+# Verwenden des offiziellen Nginx-Images als Basis
+FROM nginx
+
+# Setzen des Arbeitsverzeichnisses im Container
+WORKDIR /usr/share/nginx/html
+
+# Kopieren der HTML-Datei ins Arbeitsverzeichnis (ohne absoluten Pfad)
+COPY helloworld.html .
+
+# Exponieren des Ports 80
+EXPOSE 80
