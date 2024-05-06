@@ -1,0 +1,26 @@
+version: '3.8'
+name: kn05-compose
+services:
+  container-1:
+    image: nginx:latest
+    container_name: kn05c-con-1
+    volumes:
+      - type: volume
+        source: ilija-volume
+        target: "/var/www/html/"
+      - type: bind
+        source: "C:/Users/ilija/m347/kn05"
+        target: /usr/share/nginx/html
+      - type: tmpfs
+        target: "/random-dir"
+    ports:
+      - "2100:80"
+  container-2:
+    image: nginx:latest
+    container_name: kn05c-con-2
+    volumes:
+      - ilija-volume:/usr/share/nginx/html:rw
+    ports:
+      - "2200:80"
+volumes:
+  ilija-volume: {}
